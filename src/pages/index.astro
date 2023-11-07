@@ -1,7 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Steps from '../components/Steps.astro';
 import Logo from '../assets/logo.png'
+import Clock from '../assets/clock.png'
+
 import LogoWhite from '../assets/logo-white.png'
 import ImgGirlNav from '../assets/img_girl_nav.png'
 
@@ -47,13 +50,23 @@ import { Image } from 'astro:assets';
 				<Card icon="fa-solid fa-file" title="Gestión personalizada" description="Administra tus certificados de forma personalizada y adapta nuestro sistema a tus necesidades específicas"/>
 				<Card icon="fa-solid fa-paperclip" title="Integración fácil" description="Integra nuestro sistema de gestión de certificados fácilmente con tus sistemas existentes y aumenta la productividad de tu empresa"/>
 				<Card icon="fa-solid fa-headset" title="Asistencia en línea" description="Ofrecemos asistencia en línea para ayudar a Nuestros clientes a resolver cualquier problema o pregunta que puedan tener con el sistema"/>
-
-
 			</div>
 		</section>
-		<section class="w-[75rem] m-auto">
-			<div>
-				asdasdasd
+		<section class=" bg-gray-100">
+			<div class="w-[75rem] m-auto flex py-[4rem] gap-16">
+				<div class="flex-1">
+					<h2 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Proceso fácil</h2>
+					<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto	mt-2">Entonces... ¿Cómo funciona?</h3>
+					<div class="mt-10 flex flex-col gap-14 justify-center items-center"> 
+						<Steps icon="fa-solid fa-file-arrow-up" title='Sube tus certificados' description='Sube tus certificados de forma sencilla desde cualquier lugar y dispositivo.'/>
+						<Steps icon="fa-regular fa-square-check" title='Verifica tus certificados' description='Nuestro sistema verifica tus certificados automáticamente para asegurar la autenticidad y validez'/>
+						<Steps icon="fa-solid fa-file-contract" title='Accede a tus certificados' description='Accede a tus certificados desde cualquier lugar y dispositivo con nuestro sistema fácil y seguro.'/>
+						<Steps icon="fa-solid fa-check" title='Vamos!' description=''/>
+					</div>
+				</div>
+				<div class="flex-1">
+					<Image src={Clock} alt="logo" loading="lazy" />
+				</div>
 			</div>
 		</section>
 	</main>
