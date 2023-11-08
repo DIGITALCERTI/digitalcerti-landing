@@ -2,11 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Steps from '../components/Steps.astro';
-import Logo from '../assets/logo.png'
-import Clock from '../assets/clock.png'
 
+import Logo from '../assets/logo.png'
+import Client1 from '../assets/client1.png'
+import Client2 from '../assets/client2.png'
+import Client3 from '../assets/client3.png'
+import Client4 from '../assets/client4.png'
+import LogoWithoutLetter from '../assets/logo-without-letter.png'
+
+
+import Clock from '../assets/clock.png'
+import Clients from '../components/Clients.astro'
 import LogoWhite from '../assets/logo-white.png'
 import ImgGirlNav from '../assets/img_girl_nav.png'
+
+import PricesCard from '../components/PricesCard.astro'
 
 
 import { Image } from 'astro:assets';
@@ -81,20 +91,68 @@ import { Image } from 'astro:assets';
 				<h2 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Nuestros cliente</h2>
 				<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto	mt-2">Que dicen de nosotros críticas honestas</h3>
 				<div class="mt-10 flex flex-col gap-14 justify-center items-center"> 
+					<Clients name='Salma Bernabeu' description='Excelente sistema de gestión de certificado, facíl de usar, organizado y con un diseño profesional. Muy safisfecho!'/>
+				</div>
+				<div class="flex justify-around mt-20">
+					<Image src={Client1} alt="logo" loading="lazy" height={80} />
+					<Image src={Client2} alt="logo" loading="lazy" height={80}/>
+					<Image src={Client3} alt="logo" loading="lazy" height={80}/>
+					<Image src={Client4} alt="logo" loading="lazy" height={80}/>
+
 				</div>
 			</div>
 		</section>
 		<section class="w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem]">
 			<h2 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Nuestros planes</h2>
-			<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto	mt-2">Mejor paquete de precios, comience ahora!</h3>
-			<div class="grid grid-cols-3 gap-4 mt-14" >
+			<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto	mt-2 mb-16">Mejor paquete de precios, comience ahora!</h3>
+			<div class="flex justify-center " >
+				<PricesCard />
 			</div>
 		</section>
 		<section class=" bg-gray-100">
 			<div class="w-[75rem] m-auto py-[4rem] gap-16">
 				<h2 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Contactenos</h2>
-				<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto mt-2">Necesitas simplificar la gestión de certificados? Estamos aquí para ayudarte!</h3>
-				<div class="mt-10 flex flex-col gap-14 justify-center items-center"> 
+				<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto mt-2">¿Necesitas simplificar la gestión de certificados?</h3>
+				<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto mt-2">Estamos aquí para ayudarte!</h3>
+
+				<div class="flex justify-center mt-20"> 
+					<div class="bg-gradient-to-r from-primary-500 to-primary-800 p-10 rounded-s-3xl	">
+						<div class="flex gap-4 items-center mb-6">
+							<Image src={LogoWithoutLetter} alt="logo" loading="lazy" height={80}/>
+							<div>
+								<div class="flex gap-4 items-center mb-2">
+									<i class="fa-solid fa-phone text-white"></i>
+									<p class="text-white">+51 992149752</p>
+								</div>
+								<div class="flex gap-4 items-center">
+									<i class="fa-solid fa-envelope text-white"></i>
+									<p class="text-white">trujillomjulia@gmail.com</p>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="flex gap-4 items-center mb-4">
+								<i class="fa-solid fa-signal text-white"></i>
+								<p class="text-white">Acceso desde cualquier lugar</p>
+							</div>
+							<div class="flex gap-4 items-center">
+								<i class="fa-solid fa-headset text-white"></i>
+								<p class="text-white">Disponible siempre para ayudarte</p>
+							</div>
+						</div>
+					</div>
+					<div class="bg-white py-10 px-12 rounded-e-3xl">
+						<form class="flex flex-col gap-6 ">
+							<input type="text" placeholder="Nombre" class="w-80 border border-slate-200 rounded-xl p-2 h-11 text-xs" />
+							<input type="text" placeholder="Correo electronico" class="w-80 border border-slate-200 rounded-xl p-2 h-11 text-xs" />
+							<textarea  placeholder="Tu mensaje" class="w-80 border border-slate-200 rounded-xl p-2 text-xs h-36" rows="10" cols="50" />
+							<div class="flex justify-end">
+								<button type="button" class='w-[8.25rem] h-[2.5rem] bg-primary-500 rounded-full text-white font-medium flex justify-center items-center cursor-pointer'>
+									Enviar
+								</button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</section>

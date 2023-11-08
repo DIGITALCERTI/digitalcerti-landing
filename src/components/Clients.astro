@@ -1,0 +1,23 @@
+---
+import ClientImg from '../assets/client.png'
+import { Image } from 'astro:assets';
+
+interface Props {
+	name: string;
+	description: string;
+}
+
+const { name, description } = Astro.props;
+---
+
+<div class="flex gap-5 " >
+  <Image src={ClientImg} alt="logo" loading="lazy" width={250} height={250}/>
+  <div class="w-[34rem] flex flex-col justify-center">
+    <h4 class="text-slate-900 font-normal text-lg mb-6">
+      {description}
+    </h4>
+    <p class="text-primary-500 font-normal text-lg">
+      {name}
+    </p>
+  </div>
+</div>
