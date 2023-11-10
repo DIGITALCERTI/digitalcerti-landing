@@ -1,0 +1,89 @@
+---
+import LogoWhite from '../assets/logo-white.png'
+import { Image } from 'astro:assets';
+
+---
+
+<div class="w w-screen bg-primary-800">
+  <div class=" py-20 px-12 flex gap-5 justify-around  border-b border-primary-600 ">
+    <div class="flex-2 w-80">
+      <h1 class="text-white text-3xl font-bold mb-6">Digitalcerti</h1>
+      <p class="text-slate-300">Sistema de gestion de certificados estasd asdm 
+        asdas
+        dasdfasdfasdfasdfasdf sadfsadfasdfasdf
+        asdfasdfasdfasdfsa
+        dfasdfsadfasdfasdf
+        asdfasdfasdfasdfasd
+        fsa dsaf sdaf asdfasd fasdf</p>
+    </div>
+    <div class="flex w-2/3" >
+      <div class="flex-1">
+        <h5 class="text-white text-xl  font-semibold mb-6">Plataforma</h5>
+        <ul class="text-slate-300 flex flex-col gap-2">
+          <li>
+            <a href="">Preguntas frecuentes</a>
+          </li>
+          <li>
+            <a href="">Crear cuenta</a>
+          </li>
+          <li>
+            <a href="">Nuestros clientes</a>
+          </li>
+          <li>
+            <a href="">Demos disponibles</a>
+          </li>
+          <li>
+            <a href="">Comentarios</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex-1">
+        <h5 class="text-white text-xl  font-semibold mb-6">Sistema</h5>
+        <ul class="text-slate-300 flex flex-col gap-2">
+          <li>
+            <a href="">Sistema</a>
+          </li>
+          <li>
+            <a href="">Beneficios</a>
+          </li>
+          <li>
+            <a href="">Configuraciones</a>
+          </li>
+          <li>
+            <a href="">Plan premium</a>
+          </li>
+          <li>
+            <a href="">Panel de administración</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex-1">
+        <h5 class="text-white text-xl  font-semibold mb-6">Empresa</h5>
+        <ul class="text-slate-300 flex flex-col gap-2">
+          <li>
+            <a href="">Acerca de digitalcerti</a>
+          </li>
+          <li>
+            <a href="">Contacto</a>
+          </li>
+          <li>
+            <a href="">Terminos y condiciones</a>
+          </li>
+          <li>
+            <a href="">Politicas de privacidad</a>
+          </li>
+          <li>
+            <a href="">Politicas de reembolso</a>
+          </li>
+          <li>
+            <a href="">Renuncia de responsabilidades</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between py-9 px-12 items-center">
+    <Image src={LogoWhite} alt="logo" loading="lazy" height={32} />
+    <p class=" text-white font-light">2023  Digitalcerti. Todos los derechos reservados</p>
+  </div>
+</div>
