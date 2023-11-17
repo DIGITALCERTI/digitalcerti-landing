@@ -24,10 +24,10 @@ import { Image } from 'astro:assets';
 
 <Layout title="Digitalcerti">
 	<main class='h-[40rem] bg-gradient-to-r from-primary-500 to-primary-800 pt-10'>
-		<section class="w-[75rem] m-auto flex  flex-col justify-between h-full pb-3">
+		<section class="m-auto lg:w-[75rem] flex  flex-col justify-between h-full pb-3 px-4">
 			<div class="flex justify-between">
 				<Image src={LogoWhite} alt="logo" loading="lazy" />
-				<div class="relative lg:flex items-center">
+				<div class=" absolute lg:relative lg:flex items-center">
 					<nav class='' >
 						<ul class='flex space-x-8 text-white font-normal text-lg' >
 							<li><a href="">Inicio</a></li> 
@@ -42,18 +42,20 @@ import { Image } from 'astro:assets';
 					Ingresar
 				</a>
 			</div>
-			<div class="flex justify-around ">
+			<div class="my-0 m-auto lg:flex lg:justify-around  ">
 				<div class="mt-14">
-					<h1 class="text-4xl font-extrabold text-white mb-6 w-[30rem]">La solución perfecta para administrar tus certificados</h1>
-					<h3 class="text-xl text-white w-[30rem]">Simplifica y mejora el proceso de gestión de tus certificados con nuestra plataforma innovadora.</h3>
+					<h1 class=" text-center text-3xl  lg:text-4xl   font-extrabold text-white mb-6 w-[30rem]">La solución perfecta para administrar tus certificados</h1>
+					<h3 class="text-center text-xl text-white w-[30rem]">Simplifica y mejora el proceso de gestión de tus certificados con nuestra plataforma innovadora.</h3>
 				</div>
-				<Image src={ImgGirlNav} alt="logo" loading="lazy" />
+				<div class="max-w-sm">
+					<Image src={ImgGirlNav} alt="logo" loading="lazy" class='w-full' />
+				</div>
 			</div>
 		</section>
-		<section class="w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem]">
+		<section class="px-4 lg:w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem]">
 			<h2 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Administración eficiente</h2>
 			<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto	mt-2">Gana tiempo y eficiencia con nuestra plataforma</h3>
-			<div class="grid grid-cols-3 gap-4 mt-14" >
+			<div class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-4 mt-14" >
 				<Card icon="fa-solid fa-laptop" title="Automatización eficiente" description="Simplifica la gestión de tus certificados con nuestro sistema automatizado y mejora la eficiencia de tus procesos"/>
 				<Card icon="fa-solid fa-mobile-screen" title="Acceso móvil" description="Accede a tus certificados desde cualquier lugar y en cualquier momento gracias a nuestra aplicación móvil intuitiva"/>
 				<Card icon="fa-solid fa-chart-simple" title="Informes y estadísticas" description="Nuestros clientes pueden acceder a informes detallados y estadísticas en tiempo real para realizar un seguimiento de sus certificados y su rendimiento"/>
