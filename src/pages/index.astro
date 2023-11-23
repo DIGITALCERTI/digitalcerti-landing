@@ -24,7 +24,7 @@ import { Image } from 'astro:assets';
 
 <Layout title="Digitalcerti">
 	<main class='h-[40rem] bg-gradient-to-r from-primary-500 to-primary-800 pt-10'>
-		<section class="m-auto lg:w-[75rem] flex  flex-col justify-between h-full pb-3 px-4">
+		<section class="m-auto lg:max-w-[75rem] flex  flex-col justify-between h-full pb-3 px-4">
 			<div class="flex justify-between">
 				<Image src={LogoWhite} alt="logo" loading="lazy" />
 				<div class=" absolute lg:relative lg:flex items-center">
@@ -42,17 +42,17 @@ import { Image } from 'astro:assets';
 					Ingresar
 				</a>
 			</div>
-			<div class="my-0 m-auto lg:flex lg:justify-around  ">
+			<div class="my-0 m-auto lg:flex lg:justify-around">
 				<div class="mt-14">
-					<h1 class=" text-center text-3xl  lg:text-4xl   font-extrabold text-white mb-6 w-[30rem]">La solución perfecta para administrar tus certificados</h1>
+					<h1 class="text-center text-3xl lg:text-4xl font-extrabold text-white mb-6 w-[30rem]">La solución perfecta para administrar tus certificados</h1>
 					<h3 class="text-center text-xl text-white w-[30rem]">Simplifica y mejora el proceso de gestión de tus certificados con nuestra plataforma innovadora.</h3>
 				</div>
-				<div class="max-w-sm">
+				<div class="max-w-sm lg:max-w-lg">
 					<Image src={ImgGirlNav} alt="logo" loading="lazy" class='w-full' />
 				</div>
 			</div>
 		</section>
-		<section class="px-4 lg:w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem]">
+		<section class="px-4 lg:max-w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem]">
 			<h2 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Administración eficiente</h2>
 			<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto	mt-2">Gana tiempo y eficiencia con nuestra plataforma</h3>
 			<div class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-4 mt-14" >
@@ -65,7 +65,7 @@ import { Image } from 'astro:assets';
 			</div>
 		</section>
 		<section class=" bg-gray-100">
-			<div class="lg:w-[75rem] m-auto flex py-[4rem] gap-16">
+			<div class="lg:max-w-[75rem] m-auto flex py-[4rem] gap-16">
 				<div class="flex-1">
 					<h2 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Proceso fácil</h2>
 					<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto	mt-2">Entonces... ¿Cómo funciona?</h3>
@@ -81,7 +81,7 @@ import { Image } from 'astro:assets';
 				</div>
 			</div>
 		</section>
-		<section class="lg:w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem] px-4">
+		<section class="lg:max-w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem] px-4">
 			<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto	mb-3">Explora nuestro sistema de gestión de certificados en acción</h3>
 			<h4 class="text-sm  text-slate-800 text-center my-0	m-auto">EXPLORA Y DESCUBRE CÓMO SIMPLIFICAR LA ADMINISTRACIÓN DE TUS CERTIFICADO</h4>
 			<div class="" >
@@ -89,7 +89,7 @@ import { Image } from 'astro:assets';
 			</div>
 		</section>
 		<section class=" bg-gray-100">
-			<div class="lg:w-[75rem] m-auto py-[4rem] gap-16 px-4">
+			<div class="lg:max-w-[75rem] m-auto py-[4rem] gap-16 px-4">
 				<h2 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Nuestros cliente</h2>
 				<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto	mt-2">Que dicen de nosotros críticas honestas</h3>
 				<div class="mt-10 flex flex-col gap-14 justify-center items-center"> 
@@ -104,7 +104,7 @@ import { Image } from 'astro:assets';
 				</div>
 			</div>
 		</section>
-		<section class="lg:w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem]">
+		<section class="lg:max-w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem]">
 			<h2 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Nuestros planes</h2>
 			<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto	mt-2 mb-16">Mejor paquete de precios, comience ahora!</h3>
 			<div class="flex justify-center " >
@@ -112,7 +112,7 @@ import { Image } from 'astro:assets';
 			</div>
 		</section>
 		<section class=" bg-gray-100">
-			<div class="lg:w-[75rem] m-auto py-[4rem] gap-16">
+			<div class="lg:max-w-[75rem] m-auto py-[4rem] gap-16">
 				<h2 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Contactenos</h2>
 				<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto mt-2">¿Necesitas simplificar la gestión de certificados?</h3>
 				<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto mt-2">Estamos aquí para ayudarte!</h3>
