@@ -23,26 +23,26 @@ import { Image } from 'astro:assets';
 ---
 
 <Layout title="Digitalcerti">
-	<main class='h-[40rem] bg-gradient-to-r from-primary-500 to-primary-800 pt-10'>
+	<main class='h-[40rem] bg-gradient-to-r from-primary-500 to-primary-800 pt-10' id='home'>
 		<section class="m-auto lg:max-w-[75rem] flex  flex-col justify-between h-full pb-3 px-4">
 			<div class="flex justify-between">
 				<Image src={LogoWhite} alt="logo" loading="lazy" />
 				<div class=" absolute lg:relative lg:flex items-center">
 					<nav class='' >
 						<ul class='flex space-x-8 text-white font-normal text-lg' >
-							<li><a href="">Inicio</a></li> 
-							<li><a href="">Sistema</a></li>
-							<li><a href="">Clientes</a></li>
-							<li><a href="">Precios</a></li>
-							<li><a href="">Contactos</a></li>
+							<li><a href="#home" class="hover:font-semibold  relative before:absolute before:bottom-[-4px] before:w-0 before:h-1 hover:before:w-full before:bg-white before:transition-all ">Inicio</a></li> 
+							<li><a href="#sistem" class="hover:font-semibold  relative before:absolute before:bottom-[-4px] before:w-0 before:h-1 hover:before:w-full before:bg-white before:transition-all ">Sistema</a></li>
+							<li><a href="#clients" class="hover:font-semibold  relative before:absolute before:bottom-[-4px] before:w-0 before:h-1 hover:before:w-full before:bg-white before:transition-all ">Clientes</a></li>
+							<li><a href="#prices" class="hover:font-semibold  relative before:absolute before:bottom-[-4px] before:w-0 before:h-1 hover:before:w-full before:bg-white before:transition-all ">Precios</a></li>
+							<li><a href="#contact" class="hover:font-semibold  relative before:absolute before:bottom-[-4px] before:w-0 before:h-1 hover:before:w-full before:bg-white before:transition-all ">Contactos</a></li>
 						</ul>
 					</nav>
 				</div>
 				<div class="flex items-center" >
-					<a class='w-[8.25rem] h-[2.5rem] bg-primary-500 rounded-full text-white font-medium flex justify-center items-center cursor-pointer'>
+					<a class='w-[8.25rem] h-[2.5rem] bg-primary-500 rounded-full text-white font-medium flex justify-center items-center cursor-pointer hover:bg-primary-600 active:bg-primary-600'>
 						Ingresar
 					</a>
-					<div class="">
+					<div class="lg:hidden">
 						<i class='fa-solid fa-bars fa-xl text-primary-500 '></i>	
 					</div>
 				</div>
@@ -58,7 +58,7 @@ import { Image } from 'astro:assets';
 				</div>
 			</div>
 		</section>
-		<section class="px-4 lg:max-w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem]">
+		<section class="px-4 lg:max-w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem]" id='sistem'>
 			<h2 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Administración eficiente</h2>
 			<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto	mt-2">Gana tiempo y eficiencia con nuestra plataforma</h3>
 			<div class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-4 mt-14" >
@@ -94,7 +94,7 @@ import { Image } from 'astro:assets';
 				video
 			</div>
 		</section>
-		<section class=" bg-gray-100">
+		<section class=" bg-gray-100" id='clients'>
 			<div class="lg:max-w-[75rem] m-auto py-[4rem] gap-16 px-4">
 				<h2 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Nuestros cliente</h2>
 				<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto	mt-2">Que dicen de nosotros críticas honestas</h3>
@@ -110,14 +110,14 @@ import { Image } from 'astro:assets';
 				</div>
 			</div>
 		</section>
-		<section class="lg:max-w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem]">
+		<section class="lg:max-w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem]" id='prices'>
 			<h2 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Nuestros planes</h2>
 			<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto	mt-2 mb-16">Mejor paquete de precios, comience ahora!</h3>
 			<div class="flex justify-center " >
 				<PricesCard />
 			</div>
 		</section>
-		<section class=" bg-gray-100">
+		<section class=" bg-gray-100" id='contact'>
 			<div class="lg:max-w-[75rem] m-auto py-[4rem] gap-16">
 				<h2 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Contactenos</h2>
 				<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto mt-2">¿Necesitas simplificar la gestión de certificados?</h3>
