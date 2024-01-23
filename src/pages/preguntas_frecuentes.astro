@@ -1,11 +1,92 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HeadOnlyLogo from '../components/HeadOnlyLogo.astro'
+// import FrequentQuestions  from '../assets/frequent_questions.png'
+import FrequentQuestions  from '../assets/question2.png'
+
+
+import { Image } from 'astro:assets';
+
+const Questions = [
+  {
+    id: 1,
+    question: '¿Cómo puedo crear un nuevo certificado en el sistema?',
+    answer: 'Para crear un nuevo certificado, inicia sesión en tu cuenta y ve a la sección de "Creación de Certificados". Llena los detalles requeridos y sigue las instrucciones para generar un certificado.'
+  },
+   {
+    id: 2,
+    question: '¿Cómo inicio sesión en el sistema?',
+    answer: 'Visita la página de inicio de sesión https://go.digitalcerti.com/admin/. Ingresa tu nombre de usuario y contraseña, luego haz clic en "Iniciar Sesión"'
+  },
+  {
+    id: 3,
+    question: '¿Cómo cambio mi información personal en el sistema?',
+    answer: 'En el panel de usuario, encuentra la opción "Configuración de Cuenta". Allí podrás editar tu información personal como nombre, dirección de correo electrónico, etc.'
+  },
+  {
+    id: 4,
+    question: '¿Cómo crear un nuevo usuario en el sistema?',
+    answer: 'En el panel de administración, busca la sección de "Gestión de Usuarios" o similar. Deberías encontrar opciones para agregar un nuevo usuario y asignarle roles.'
+  },
+  {
+    id: 5,
+    question: '¿Cómo contacto con el soporte técnico si tengo problemas?',
+    answer: 'Encuentra la sección de "Soporte Técnico" en el menú o en la página de inicio. Allí deberías tener información de contacto, como un correo electrónico o número de teléfono.'
+  },
+]
 
 ---
 
 <Layout title="Digitalcerti">
   <HeadOnlyLogo />
-  <h1 class=" text-xl font-semibold text-center">Preguntas frecuentes</h1>
+  <div class="bg-gradient-to-r from-primary-500 to-primary-800 p-20">
+    <h1 class="  font-semibold text-center text-4xl text-slate-100">Preguntas frecuentes</h1>
+  </div>
+  <div class="container flex  items-center justify-between flex-wrap">
+    <Image src={FrequentQuestions} alt="preuntas_frecuentes" loading="lazy" class='hidden lg:block w-[400px] '/>
+    <div class="lg:w-[50%]">
+      {
+        Questions.map((el) => (
+          <div class="mb-4 cursor-pointer questionItem" data-question={`question_${el.id}`} >
+            <div class="flex items-center gap-2 mb-2 pointer-events-none">
+              <i class="fa-solid fa-plus text-slate-800 " id={`icon_question_${el.id}`}></i>
+              <p class="text-lg font-bold text-slate-800" >{el.question}</p>
+            </div>          
+            <p class="text-slate-600  transition-all max-h-0 overflow-hidden" data-open="0" data-answer={`question_${el.id}`}>{el.answer}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
 </Layout>
 
+<script>
+  const questions = document.querySelectorAll('.questionItem')
+  console.log(questions)
+
+  const handleClick = (event) => {
+    const questionSelected: any = document.querySelector(`[data-answer='${event.target.dataset.question}']`)
+    const iconSelected: any = document.querySelector(`#icon_${event.target.dataset.question}`)
+
+    
+    if (!+questionSelected.dataset.open) {
+      questionSelected.classList.add('max-h-[100px]')
+      questionSelected.classList.remove('max-h-0')
+      iconSelected.classList.add('fa-minus')
+      iconSelected.classList.remove('fa-plus')
+      questionSelected.dataset.open = 1
+    } else {
+      questionSelected.classList.remove('max-h-[100px]')
+      questionSelected.classList.add('max-h-0')
+      iconSelected.classList.add('fa-plus')
+      iconSelected.classList.remove('fa-minus')
+      questionSelected.dataset.open = 0
+    }
+    console.log(questionSelected.dataset.open)
+  }
+
+  questions.forEach((el) => {
+    el.addEventListener("click", (event) => handleClick(event));
+  })
+
+</script>

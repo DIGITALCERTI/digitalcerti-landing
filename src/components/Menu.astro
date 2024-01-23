@@ -1,0 +1,78 @@
+---
+import LogoWhite from '../assets/logo-white.png'
+import { Image } from 'astro:assets';
+
+const menuData = [
+	{
+		name: 'Inicio',
+		href: '#home'
+	},
+	{
+		name: 'Sistema',
+		href: '#sistem'
+	},
+	{
+		name: 'Clientes',
+		href: '#clients'
+	},
+	{
+		name: 'Precios',
+		href: '#prices'
+	},
+	{
+		name: 'Contactos',
+		href: '#contact'
+	},
+]
+
+---
+<div class="flex justify-between items-center relative pb-4">
+  <Image src={LogoWhite} alt="logo" loading="lazy" />
+  <div class="hidden lg:relative lg:flex items-center">
+    <nav class='' >
+      <ul class='flex space-x-8 text-white font-normal text-lg' >
+        {menuData.map((el) => (
+          <li><a href={el.href} class="hover:font-semibold  relative before:absolute before:bottom-[-4px] before:w-0 before:h-1 hover:before:w-full before:bg-white before:transition-all ">{el.name}</a></li> 
+        ))}
+      </ul>
+    </nav>
+  </div>
+  <div class="lg:flex lg:items-center">
+    <a href="https://go.digitalcerti.com/admin/" target="_blank" class='w-[8.25rem] h-[2.5rem] hidden bg-primary-500 rounded-full text-white font-medium lg:flex justify-center items-center cursor-pointer hover:bg-primary-600 active:bg-primary-600'>
+      Ingresar
+    </a>
+    <div class="lg:hidden cursor-pointer" id="menuTrigger">
+      <i class="fa-solid fa-bars fa-xl text-primary-500 hover:text-white active:text-primary-600"></i>	
+    </div>
+  </div>
+  <div class=" absolute w-full bg-white top-full h-[0px] overflow-hidden transition-all" id="menuMovil">
+    <nav class='' >
+      <ul class='font-normal text-lg text-gray-700' >
+        {menuData.map((el) => (
+          <li class="p-4  border-b border-solid border-primary-500 ">
+            <a href={el.href} class="hover:font-semibold hover:text-primary-500 relative  ">{el.name}</a>
+          </li> 
+        ))}
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<script>
+	let activeMenu = false
+	const menuMovil = document.getElementById("menuMovil")
+  function handleClick () {
+		if (!activeMenu) {
+			menuMovil.classList.add('h-[305px]')
+			menuMovil.classList.remove('h-[0px]')
+			activeMenu = true
+		} else {
+			menuMovil.classList.remove('h-[305px]')
+			menuMovil.classList.add('h-[0px]')
+			activeMenu = false
+
+		}
+
+  }
+  document.getElementById("menuTrigger").addEventListener("click", handleClick);
+</script>

@@ -36,5 +36,13 @@ export default {
       sans: ['"Inter", sans-serif'],
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents, theme }) {
+      addComponents({
+        '.container': {
+          '@apply px-4 lg:max-w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem]': {},
+        },
+      });
+    },
+  ],
 };
