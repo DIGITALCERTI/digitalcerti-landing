@@ -22,8 +22,6 @@ import Footer from '../components/Footer.astro'
 
 import { Image } from 'astro:assets';
 
-
-
 ---
 
 <Layout title="Digitalcerti">
@@ -131,12 +129,12 @@ import { Image } from 'astro:assets';
 						</div>
 					</div>
 					<div class="bg-white py-10 px-12 lg:rounded-e-3xl">
-						<form class="flex flex-col gap-6 ">
-							<input type="text" placeholder="Nombre" class="lg:w-80 border border-slate-200 rounded-xl p-2 h-11 text-xs" />
-							<input type="text" placeholder="Correo electronico" class="lg:w-80 border border-slate-200 rounded-xl p-2 h-11 text-xs" />
-							<textarea  placeholder="Tu mensaje" class="lg:w-80 border border-slate-200 rounded-xl p-2 text-xs h-36" rows="10" cols="50" />
+						<form class="flex flex-col gap-6 " id="contactForm">
+							<input type="text" name="name" placeholder="Nombre" class="lg:w-80 border border-slate-200 rounded-xl p-2 h-11 text-xs" />
+							<input  type="email" name="email" placeholder="Correo electronico" class="lg:w-80 border border-slate-200 rounded-xl p-2 h-11 text-xs" />
+							<textarea name="message"  placeholder="Tu mensaje" class="lg:w-80 border border-slate-200 rounded-xl p-2 text-xs h-36" rows="10" cols="50" />
 							<div class="flex justify-end">
-								<button type="button" class='w-[8.25rem] h-[2.5rem] bg-primary-500 rounded-full text-white font-medium flex justify-center items-center cursor-pointer'>
+								<button type="submit" class='w-[8.25rem] h-[2.5rem] bg-primary-500 rounded-full text-white font-medium flex justify-center items-center cursor-pointer'>
 									Enviar
 								</button>
 							</div>
@@ -149,7 +147,56 @@ import { Image } from 'astro:assets';
 	</main>
 </Layout>
 
-<style>
+<script is:inline>
+
+	const url = 'https://api.resend.com/emails';
+
+	const form = document.getElementById('contactForm');
+
+	form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+
+    // Crear una instancia de Resend
+    // const resend = new Resend();
+
+		const postData = {
+			from: formData.get('email'),
+			to: ["jpaulneo2k@gmail.com"],
+			subject: "Contacto Digitacerti",
+			text: formData.get('message'),
+		};
+
+		const requestOptions = {
+			method: 'POST',
+			headers: {
+				'Authorization': 'Bearer re_MU4eTmjc_58B498z8sFEasvwTZJa1RQRY',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(postData),
+			mode: 'no-cors', 
+		};
+	
+
+    await fetch(url, requestOptions)
+			.then(response => {
+				// Verificar si la solicitud fue exitosa
+				if (!response.ok) {
+					throw new Error('La solicitud POST no fue exitosa');
+				}
+				// Procesar la respuesta en caso de éxito
+				return response.json(); // O response.text() si esperas una respuesta de texto en lugar de JSON
+			})
+			.then(data => {
+				// Manejar los datos de la respuesta
+				console.log('Respuesta exitosa:', data);
+			})
+			.catch(error => {
+				// Manejar cualquier error que ocurra durante la solicitud
+				console.error('Error en la solicitud POST:', error);
+			});
+  });
 
 
-</style>
+</script>
