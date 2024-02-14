@@ -19,8 +19,10 @@ import ImgGirlNav from '../assets/img_girl_nav.png'
 
 import PricesCard from '../components/PricesCard.astro'
 import Footer from '../components/Footer.astro'
-
+import Contact from '../components/react/contact'
 import { Image } from 'astro:assets';
+
+
 
 ---
 
@@ -67,7 +69,7 @@ import { Image } from 'astro:assets';
 				</div>
 			</div>
 		</section>
-		<section class="lg:max-w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem] px-4">
+		<section class="lg:max-w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem] px-4" id="demo">
 			<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto	mb-3">Explora nuestro sistema de gestión de certificados en acción</h3>
 			<h4 class="text-sm  text-slate-800 text-center my-0	m-auto">EXPLORA Y DESCUBRE CÓMO SIMPLIFICAR LA ADMINISTRACIÓN DE TUS CERTIFICADO</h4>
 			<div class="" >
@@ -129,12 +131,38 @@ import { Image } from 'astro:assets';
 						</div>
 					</div>
 					<div class="bg-white py-10 px-12 lg:rounded-e-3xl">
-						<form class="flex flex-col gap-6 " id="contactForm">
-							<input type="text" name="name" placeholder="Nombre" class="lg:w-80 border border-slate-200 rounded-xl p-2 h-11 text-xs" />
-							<input  type="email" name="email" placeholder="Correo electronico" class="lg:w-80 border border-slate-200 rounded-xl p-2 h-11 text-xs" />
-							<textarea name="message"  placeholder="Tu mensaje" class="lg:w-80 border border-slate-200 rounded-xl p-2 text-xs h-36" rows="10" cols="50" />
+						<!-- <Contact client:visible /> -->
+						<form class="flex flex-col gap-6 " action="https://api.web3forms.com/submit" method="POST"  >
+							<input type="hidden" name="access_key" value="c8d12656-86e0-4b4e-aefa-fcee2e29b27f">
+							<input type="hidden" name="subject" value="Contacto Digitalcerti">
+							<input
+								type="text"
+								name="name"
+								required
+								placeholder="Nombre"
+								class="lg:w-80 border border-slate-200 rounded-xl p-2 h-11 text-xs"
+							/>
+							<input
+								type="email"
+								name="email"
+								required
+								placeholder="Correo electronico"
+								class="lg:w-80 border border-slate-200 rounded-xl p-2 h-11 text-xs"
+							/>
+							<textarea
+								name="message"
+								required
+								placeholder="Tu mensaje"
+								class="lg:w-80 border border-slate-200 rounded-xl p-2 text-xs h-36"
+								rows="10"
+								cols="50"
+							/>
+							<input type="hidden" name="redirect" value="https://web3forms.com/success">
 							<div class="flex justify-end">
-								<button type="submit" class='w-[8.25rem] h-[2.5rem] bg-primary-500 rounded-full text-white font-medium flex justify-center items-center cursor-pointer'>
+								<button
+								type="submit"
+									class="w-[8.25rem] h-[2.5rem] bg-primary-500 rounded-full text-white font-medium flex justify-center items-center cursor-pointer"
+								>
 									Enviar
 								</button>
 							</div>
@@ -147,56 +175,48 @@ import { Image } from 'astro:assets';
 	</main>
 </Layout>
 
-<script is:inline>
+<script >
 
-	const url = 'https://api.resend.com/emails';
+	// import { Resend } from 'resend';
+	// import {SendMail} from '../components/SendMail'
+	// const resend = new Resend('re_MU4eTmjc_58B498z8sFEasvwTZJa1RQRY');
 
-	const form = document.getElementById('contactForm');
+	// const SendMail  = async (name, email, message) => {
+	// 	console.log('entre')
+	// 	const { data, error } = await resend.emails.send({
+	// 		from: `${name} <onboarding@resend.dev>`,
+	// 		to: ['jpaulneo2k@gmail.com'],
+	// 		subject: `Contacto digitalcerti - ${email} `,
+	// 		html: message,
+	// 	});
 
-	form.addEventListener('submit', async (event) => {
-    event.preventDefault();
+	// 	console.log({ data });
+	// 	if (error) {
+	// 		return console.error({ error });
+	// 	}
 
-    const formData = new FormData(form);
+		
+	// }
 
-    // Crear una instancia de Resend
-    // const resend = new Resend();
+	// console.log('red');
 
-		const postData = {
-			from: formData.get('email'),
-			to: ["jpaulneo2k@gmail.com"],
-			subject: "Contacto Digitacerti",
-			text: formData.get('message'),
-		};
+	// const form = document.getElementById('miFormulario')
 
-		const requestOptions = {
-			method: 'POST',
-			headers: {
-				'Authorization': 'Bearer re_MU4eTmjc_58B498z8sFEasvwTZJa1RQRY',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(postData),
-			mode: 'no-cors', 
-		};
-	
-
-    await fetch(url, requestOptions)
-			.then(response => {
-				// Verificar si la solicitud fue exitosa
-				if (!response.ok) {
-					throw new Error('La solicitud POST no fue exitosa');
-				}
-				// Procesar la respuesta en caso de éxito
-				return response.json(); // O response.text() si esperas una respuesta de texto en lugar de JSON
-			})
-			.then(data => {
-				// Manejar los datos de la respuesta
-				console.log('Respuesta exitosa:', data);
-			})
-			.catch(error => {
-				// Manejar cualquier error que ocurra durante la solicitud
-				console.error('Error en la solicitud POST:', error);
-			});
-  });
+	// form.addEventListener('submit', async (event) => {
+  //   // stop form submission
+	// 		event.preventDefault();
+	// 		const data = new FormData(event.target);
+	// 		const name = data.get('name');
+	// 		const email = data.get('email');
+	// 		const message = data.get('message');
+	// 		console.log(name);
+	// 		console.log(email);
+	// 		console.log(message);
+	// 		try {
+				
+	// 			await SendMail(name, email, message);
+	// 		} catch {}
+	// });
 
 
 </script>

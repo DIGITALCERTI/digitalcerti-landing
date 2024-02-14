@@ -2,14 +2,36 @@
 import { Image } from 'astro:assets';
 import LogoWhite from '../assets/logo-white.png'
 
+const menuData = [
+	{
+		name: 'Inicio',
+		href: './'
+	},
+
+]
+
+
 ---
 
 <div class=" p-6 bg-gradient-to-r from-primary-500 to-primary-800 flex justify-between items-center relative pb-4 ">
-  <a href="./">
-    <Image src={LogoWhite} alt="logo" loading="lazy" />
-  </a>
-  <a href="https://go.digitalcerti.com/admin/" target="_blank" class='w-[8.25rem] h-[2.5rem] hidden bg-primary-500 rounded-full text-white font-medium lg:flex justify-center items-center cursor-pointer hover:bg-primary-600 active:bg-primary-600'>
-    Ingresar
-  </a>
+  <div class="m-auto lg:w-[75rem] flex  justify-between h-full pb-3 px-4">
+    <div class="flex gap-10">
+      <a href="./">
+        <Image src={LogoWhite} alt="logo" loading="lazy" />
+      </a>
+       <div class="hidden lg:relative lg:flex items-center">
+        <nav class='' >
+          <ul class='flex space-x-8 text-white font-normal text-lg' >
+            {menuData.map((el) => (
+              <li><a href={el.href} class="hover:font-semibold  relative before:absolute before:bottom-[-4px] before:w-0 before:h-1 hover:before:w-full before:bg-white before:transition-all ">{el.name}</a></li> 
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <a href="https://go.digitalcerti.com/admin/" target="_blank" class='w-[8.25rem] h-[2.5rem] hidden bg-primary-500 rounded-full text-white font-medium lg:flex justify-center items-center cursor-pointer hover:bg-primary-600 active:bg-primary-600'>
+      Ingresar
+    </a>
+  </div>
 </div>
 
