@@ -32,9 +32,6 @@ dependencies:
   astro:
     specifier: ^4.3.5
     version: 4.3.5(typescript@5.2.2)
-  preact:
-    specifier: ^10.19.4
-    version: 10.19.4
   react:
     specifier: ^18.2.0
     version: 18.2.0
