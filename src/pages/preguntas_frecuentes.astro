@@ -60,7 +60,7 @@ const Questions = [
 <script>
   const questions = document.querySelectorAll('.questionItem')
 
-  const handleClick = (event) => {
+  const handleClick = (event: any) => {
     const questionSelected: any = document.querySelector(`[data-answer='${event.target.dataset.question}']`)
     const iconSelected: any = document.querySelector(`#icon_${event.target.dataset.question}`)
 

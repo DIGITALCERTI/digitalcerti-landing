@@ -37,7 +37,7 @@ export default {
     },
   },
   plugins: [
-    function ({ addComponents, theme }) {
+    function ({ addComponents }) {
       addComponents({
         '.container': {
           '@apply px-4 lg:max-w-[75rem] m-auto pt-[4.5rem] pb-[5.6rem]': {},

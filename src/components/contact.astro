@@ -31,7 +31,7 @@ import LogoWithoutLetter from '../assets/logo-without-letter.png'
         </div>
         <div class="flex gap-4 items-center">
           <i class="fa-solid fa-headset text-white"></i>
-          <p class="text-white">Disponible siempre para ayudarte</p>
+          <p class="text-white">Disponible siempre para ayudarte{Astro.request.url} </p>
         </div>
       </div>
     </div>
@@ -62,7 +62,7 @@ import LogoWithoutLetter from '../assets/logo-without-letter.png'
           rows="10"
           cols="50"
         />
-        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+        <input type="hidden" name="redirect" value={`${Astro.request.url}thank_contact`}>
         <div class="flex justify-end">
           <button
           type="submit"
