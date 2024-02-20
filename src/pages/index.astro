@@ -17,8 +17,7 @@ import ImgGirlNav from '../assets/img_girl_nav.png'
 import PricesCard from '../components/PricesCard.astro'
 import Footer from '../components/Footer.astro'
 import { Image } from 'astro:assets';
-
-
+import Contact from '../components/contact.astro'
 
 ---
 
@@ -95,124 +94,8 @@ import { Image } from 'astro:assets';
 			</div>
 		</section>
 		<section class=" bg-gray-100" id='contact'>
-			<div class="lg:max-w-[75rem] m-auto py-[4rem] gap-16">
-				<h2 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Contactenos</h2>
-				<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto mt-2">¿Necesitas simplificar la gestión de certificados?</h3>
-				<h3 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto mt-2">Estamos aquí para ayudarte!</h3>
-
-				<div class="lg:flex justify-center mt-20"> 
-					<div class="bg-gradient-to-r from-primary-500 to-primary-800 p-10 lg:rounded-s-3xl	">
-						<div class="flex gap-4 items-center mb-6">
-							<Image src={LogoWithoutLetter} alt="logo" loading="lazy" height={80}/>
-							<div>
-								<div class="flex gap-4 items-center mb-2">
-									<i class="fa-solid fa-phone text-white"></i>
-									<p class="text-white">+51 992149752</p>
-								</div>
-								<div class="flex gap-4 items-center">
-									<i class="fa-solid fa-envelope text-white"></i>
-									<p class="text-white">trujillomjulia@gmail.com</p>
-								</div>
-							</div>
-						</div>
-						<div>
-							<div class="flex gap-4 items-center mb-4">
-								<i class="fa-solid fa-signal text-white"></i>
-								<p class="text-white">Acceso desde cualquier lugar</p>
-							</div>
-							<div class="flex gap-4 items-center">
-								<i class="fa-solid fa-headset text-white"></i>
-								<p class="text-white">Disponible siempre para ayudarte</p>
-							</div>
-						</div>
-					</div>
-					<div class="bg-white py-10 px-12 lg:rounded-e-3xl">
-						<form class="flex flex-col gap-6 " action="https://api.web3forms.com/submit" method="POST"  >
-							<!-- <input type="hidden" name="access_key" value="c8d12656-86e0-4b4e-aefa-fcee2e29b27f"> -->
-							<input type="hidden" name="access_key" value="03170827-e444-400a-8a9b-1c5c088bf155">
-							<input type="hidden" name="subject" value="Contacto Digitalcerti">
-							<input
-								type="text"
-								name="name"
-								required
-								placeholder="Nombre"
-								class="lg:w-80 border border-slate-200 rounded-xl p-2 h-11 text-xs"
-							/>
-							<input
-								type="email"
-								name="email"
-								required
-								placeholder="Correo electronico"
-								class="lg:w-80 border border-slate-200 rounded-xl p-2 h-11 text-xs"
-							/>
-							<textarea
-								name="message"
-								required
-								placeholder="Tu mensaje"
-								class="lg:w-80 border border-slate-200 rounded-xl p-2 text-xs h-36"
-								rows="10"
-								cols="50"
-							/>
-							<input type="hidden" name="redirect" value="https://web3forms.com/success">
-							<div class="flex justify-end">
-								<button
-								type="submit"
-									class="w-[8.25rem] h-[2.5rem] bg-primary-500 rounded-full text-white font-medium flex justify-center items-center cursor-pointer"
-								>
-									Enviar
-								</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
+			<Contact />
 		</section>
 		<Footer/>
 	</main>
 </Layout>
-
-<script >
-
-	// import { Resend } from 'resend';
-	// import {SendMail} from '../components/SendMail'
-	// const resend = new Resend('re_MU4eTmjc_58B498z8sFEasvwTZJa1RQRY');
-
-	// const SendMail  = async (name, email, message) => {
-	// 	console.log('entre')
-	// 	const { data, error } = await resend.emails.send({
-	// 		from: `${name} <onboarding@resend.dev>`,
-	// 		to: ['jpaulneo2k@gmail.com'],
-	// 		subject: `Contacto digitalcerti - ${email} `,
-	// 		html: message,
-	// 	});
-
-	// 	console.log({ data });
-	// 	if (error) {
-	// 		return console.error({ error });
-	// 	}
-
-		
-	// }
-
-	// console.log('red');
-
-	// const form = document.getElementById('miFormulario')
-
-	// form.addEventListener('submit', async (event) => {
-  //   // stop form submission
-	// 		event.preventDefault();
-	// 		const data = new FormData(event.target);
-	// 		const name = data.get('name');
-	// 		const email = data.get('email');
-	// 		const message = data.get('message');
-	// 		console.log(name);
-	// 		console.log(email);
-	// 		console.log(message);
-	// 		try {
-				
-	// 			await SendMail(name, email, message);
-	// 		} catch {}
-	// });
-
-
-</script>

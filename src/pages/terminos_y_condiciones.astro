@@ -1,12 +1,66 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HeadOnlyLogo from '../components/HeadOnlyLogo.astro'
+import Footer from '../components/Footer.astro';
 
 
 ---
 
 <Layout title="Digitalcerti">
   <HeadOnlyLogo />
-  <h1 class=" text-xl font-semibold text-center">Terminos y condiciones</h1>
+  <div class='h-[10rem] bg-gradient-to-r from-primary-500 to-primary-800 pt-10'>
+    <h1 class="text-center text-2xl lg:text-3xl font-semibold text-slate-50 m-auto">Terminos y condiciones</h1>
+  </div>
+  <section class="max-w-[1280px] m-auto px-6 my-20">
+    <p class="mb-8 text-slate-700">Bienvenido a Digitalcerti, la plataforma líder en la gestión de certificados electrónicos y digitales. A continuación, detallamos los términos y condiciones que rigen nuestra operación:</p>
+    <h3 class=" text-lg font-semibold text-slate-800 mb-3">Registro y Uso de la Plataforma:</h3>
+    <div class=" ml-10 mb-8">
+      <ul class="list-disc text-slate-700">
+        <li>Al registrarse, acceder o utilizar nuestros servicios, el cliente acepta plenamente los términos y condiciones aquí descritos.</li>
+        <li>Se requiere ser mayor de 18 años y tener capacidad legal para contratar nuestros servicios.</li>
+        <li>La utilización de la plataforma implica la aceptación total de estos términos y condiciones.</li>
+      </ul>    
+    </div>
+    <h3 class=" text-lg font-semibold text-slate-800 mb-8">Licencia de Uso:</h3>
+    <div class=" ml-10 mb-8">
+      <ul class="list-disc text-slate-700">
+        <li>Digitalcerti es titular de todos los derechos sobre el software de la plataforma.</li>
+        <li>Se otorga a los clientes una licencia limitada para acceder y utilizar la plataforma con fines empresariales.</li>
+        <li>El software no puede ser copiado, modificado, desarrollado, descompilado o divulgado sin autorización.</li>
+      </ul>    
+    </div>
+    <h3 class=" text-lg font-semibold text-slate-800 mb-8">Objeto de la Aplicación:</h3>
+    <div class=" ml-10 mb-8">
+      <ul class="list-disc text-slate-700">
+        <li>Digitalcerti ofrece una plataforma para adquirir certificados y servicios relacionados.</li>
+        <li>Nuestra plataforma continuará incorporando nuevos productos y servicios para satisfacer las necesidades de nuestros clientes.</li>
+      </ul>    
+    </div>
+    <h3 class=" text-lg font-semibold text-slate-800 mb-8">Registro de Clientes:</h3>
+    <div class=" ml-10 mb-8">
+      <ul class="list-disc text-slate-700">
+        <li>Solo podrán registrarse empresas y organizaciones con capacidad legal para contratar.</li>
+        <li>El registro se realiza a través de la plataforma, aceptando expresamente los términos y condiciones.</li>
+        <li>El cliente es responsable de mantener la confidencialidad de su cuenta y contraseña.</li>
+      </ul>    
+    </div>
+    <h3 class=" text-lg font-semibold text-slate-800 mb-8">Prohibición de Trampas y Estafas:</h3>
+    <div class=" ml-10 mb-8">
+      <ul class="list-disc text-slate-700">
+        <li>Se prohíbe el uso de cualquier tipo de trampa, estafa o lenguaje obsceno en la plataforma.</li>
+        <li>Digitalcerti se reserva el derecho de cancelar cuentas y rechazar el servicio a quienes incumplan estas normativas</li>
+      </ul>    
+    </div>
+    <h3 class=" text-lg font-semibold text-slate-800 mb-8">Modificación de Campos y Requerimientos:</h3>
+    <div class=" ml-10 mb-8">
+      <ul class="list-disc text-slate-700">
+        <li>Digitalcerti podrá modificar los campos requeridos para el registro y uso de la plataforma según sea necesario</li>
+      </ul>    
+    </div>
+    <p class="mb-8 text-slate-700">Al registrarse y utilizar Digitalcerti, el cliente acepta cumplir con estos términos y condiciones. Si tiene alguna pregunta o inquietud, no dude en ponerse en contacto con nuestro equipo de soporte.</p>
+    <p class="mb-8 text-primary-700 italic">soporte@digitalcerti.com</p>
+  </section>
+  <Footer />
+
 </Layout>
 
