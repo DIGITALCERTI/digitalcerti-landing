@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), sitemap()],
-  site: 'https://digitalcerti.netlify.app/',
+  site: 'https://www.digitalcerti.com/',
   image: {
     service: passthroughImageService(),
   },
