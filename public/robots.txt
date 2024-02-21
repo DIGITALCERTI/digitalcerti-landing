@@ -5,4 +5,4 @@ Disallow:
 
 # ---------------------------
 # END YOAST BLOCK
-Sitemap: www.digitalcerti.com/sitemap-index.xml
+Sitemap: https://www.digitalcerti.com/sitemap-index.xml
