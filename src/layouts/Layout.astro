@@ -18,7 +18,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<link rel="canonical" href={canonicalURL} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<script src="https://kit.fontawesome.com/73da2e88a8.js" crossorigin="anonymous"></script>
+		<script src="https://kit.fontawesome.com/73da2e88a8.js" crossorigin="anonymous" async></script>
 	</head>
 	<body>
 		<slot />
