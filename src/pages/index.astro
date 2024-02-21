@@ -14,6 +14,7 @@ import PricesCard from '../components/PricesCard.astro'
 import Footer from '../components/Footer.astro'
 import { Image } from 'astro:assets';
 import Contact from '../components/contact.astro'
+import ITEPClient from '../assets/ITEPClient.jpeg'
 
 ---
 
@@ -23,8 +24,8 @@ import Contact from '../components/contact.astro'
 			<Menu />
 			<div class="my-0 m-auto lg:flex lg:justify-around">
 				<div class="mt-14">
-					<h1 class="text-center text-3xl lg:text-4xl font-extrabold text-white mb-6 w-[30rem]">La solución perfecta para administrar tus certificados</h1>
-					<h2 class="text-center text-xl text-white w-[30rem]">Simplifica y mejora el proceso de gestión de tus certificados con nuestra plataforma innovadora.</h2>
+					<h1 class="text-center text-3xl lg:text-4xl font-extrabold text-white mb-6 md:w-[30rem]">La solución perfecta para administrar tus certificados</h1>
+					<h2 class="text-center text-xl text-white md:w-[30rem]">Simplifica y mejora el proceso de gestión de tus certificados con nuestra plataforma innovadora.</h2>
 				</div>
 				<div class="max-w-sm lg:max-w-lg">
 					<Image src={ImgBanner} alt="logo" loading="lazy" class='w-full' />
@@ -72,7 +73,7 @@ import Contact from '../components/contact.astro'
 				<h3 class="text-base font-extrabold text-primary-500 text-center my-0	m-auto">Nuestros cliente</h3>
 				<h4 class="text-3xl font-bold text-slate-900 text-center my-0	m-auto	mt-2">Que dicen de nosotros críticas honestas</h4>
 				<div class="mt-10 flex flex-col gap-14 justify-center items-center"> 
-					<Clients name='Salma Bernabeu' description='Excelente sistema de gestión de certificado, facíl de usar, organizado y con un diseño profesional. Muy safisfecho!'/>
+					<Clients img={ITEPClient} name='INSTITUTO ITEP' description='Excelente sistema de gestión de certificado, facíl de usar, organizado y con un diseño profesional. Muy safisfecho!'/>
 				</div>
 				<div class="flex justify-around mt-20 overflow-x-auto w-full">
 					<Image src={Client1} alt="logo" loading="lazy" height={80} />
