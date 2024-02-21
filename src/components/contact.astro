@@ -37,8 +37,7 @@ import LogoWithoutLetter from '../assets/logo-without-letter.png'
     </div>
     <div class="bg-white py-10 px-12 lg:rounded-e-3xl">
       <form class="flex flex-col gap-6 " action="https://api.web3forms.com/submit" method="POST"  >
-        <!-- <input type="hidden" name="access_key" value="c8d12656-86e0-4b4e-aefa-fcee2e29b27f"> -->
-        <input type="hidden" name="access_key" value="03170827-e444-400a-8a9b-1c5c088bf155">
+        <input type="hidden" name="access_key" value={import.meta.env.TOKEN_EMAIL}>
         <input type="hidden" name="subject" value="Contacto Digitalcerti">
         <input
           type="text"
