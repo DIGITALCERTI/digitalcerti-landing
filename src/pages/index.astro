@@ -3,10 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Steps from '../components/Steps.astro';
 import Menu from '../components/Menu.astro'
-import Client1 from '../assets/client1.png'
-import Client2 from '../assets/client2.png'
-import Client3 from '../assets/client3.png'
-import Client4 from '../assets/client4.png'
+import Client1 from '../assets/clients/logo-itep.png'
+import Client2 from '../assets/clients/logo-itep-conductores.png'
 import Clock from '../assets/clock.png'
 import Clients from '../components/Clients.astro'
 import ImgBanner from '../assets/img_banner.png'
@@ -75,11 +73,9 @@ import ITEPClient from '../assets/ITEPClient.jpeg'
 				<div class="mt-10 flex flex-col gap-14 justify-center items-center"> 
 					<Clients img={ITEPClient} name='INSTITUTO ITEP' description='Excelente sistema de gestión de certificado, facíl de usar, organizado y con un diseño profesional. Muy safisfecho!'/>
 				</div>
-				<div class="flex justify-around mt-20 overflow-x-auto w-full">
+				<div class="flex justify-around mt-20 overflow-x-auto w-full gap-6">
 					<Image src={Client1} alt="logo" loading="lazy" height={80} />
-					<Image src={Client2} alt="logo" loading="lazy" height={80}/>
-					<Image src={Client3} alt="logo" loading="lazy" height={80}/>
-					<Image src={Client4} alt="logo" loading="lazy" height={80}/>
+					<Image src={Client2} alt="logo" loading="lazy" height={80} />
 				</div>
 			</div>
 		</section>
