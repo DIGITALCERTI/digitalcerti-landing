@@ -1,32 +1,54 @@
 ---
 
+
+const yearData = [
+  'Panel de administración intuitiva',
+  'Página de busqueda de certificados',
+  'Capacitaciones y tutoriales',
+  'Administrador de acceso seguro',
+  'Servidor/hosting incluido',
+  'Actualizaciones'
+]
+
+const initialData = [
+  'Soporte y actualiaciones',
+  'Capacitaciones y tutoriales',
+  'Configuraciones de la marca',
+  'Instalaciones ',
+] 
 ---
 
 <div class="border-2 border-primary-500 rounded-3xl p-10 w-[25rem]">
-  <p class="text-3xl font-extrabold text-slate-900 text-center mb-5">Premium desde</p>
-  <p class="text-xl font-light text-center text-slate-900 mb-8">Para instituciones que buscan una gestión eficiente de certificados</p>
-  <p class="text-primary-500 text-6xl font-black text-center">$ 9.99</p>
-  <p class="text-slate-900 text-xl font-medium text-center">por mes</p>
+  <p class="text-3xl font-extrabold text-slate-900 text-center mb-5">Paquete</p>
+  <p class="text-xl font-light text-center text-slate-900 mb-8">Perfecto para una gestión eficiente de certificados, te ofrecemos todo lo que necesitas para simplificar tus procesos.</p>
+  <p class="text-primary-500 text-6xl font-black text-center">$ 150.00</p>
+  <p class="text-slate-900 text-xl font-medium text-center">Anual</p>
   <div class="flex flex-col gap-3 mt-14 mb-7">
-    <div class="flex gap-4 items-center">
-      <i class="fa-regular fa-circle-check text-primary-500"></i>
-      <p>Panel de administración</p>
-    </div>
-    <div class="flex gap-4 items-center">
-      <i class="fa-regular fa-circle-check text-primary-500"></i>
-      <p>30 GB almacenamiento</p>
-    </div>
-    <div class="flex gap-4 items-center">
-      <i class="fa-regular fa-circle-check text-primary-500"></i>
-      <p>Soporte continuo</p>
-    </div>
-    <div class="flex gap-4 items-center">
-      <i class="fa-regular fa-circle-check text-primary-500"></i>
-      <p>Funciones adicionales</p>
-    </div>
+    {
+      yearData.map((el) => (
+        <div class="flex gap-4 items-center">
+          <i class="fa-regular fa-circle-check text-primary-500"></i>
+          <p class="text-slate-600">{el}</p>
+        </div>
+      ))
+    }
+    
+  </div>
+  <p class="text-primary-500 text-4xl font-semibold text-center">$ 250.00</p>
+  <p class="text-slate-800 text-lg font-medium text-center mb-6">Pago inicial</p>
+  <div class="flex flex-col gap-3 mt-14 mb-7">
+    {
+      initialData.map((el) => (
+        <div class="flex gap-4 items-center">
+          <i class="fa-regular fa-circle-check text-primary-500"></i>
+          <p>{el}</p>
+        </div>
+      ))
+    }
+    
   </div>
   <div class="flex justify-center items-center">
-    <a class='w-[8.25rem] h-[2.5rem] bg-primary-500 rounded-full text-white font-medium flex justify-center items-center cursor-pointer'>
+    <a target="_blank" href="/contactos" class='w-[8.25rem] h-[2.5rem] bg-primary-500 rounded-full text-white font-medium flex justify-center items-center cursor-pointer'>
       Obtener
     </a>
   </div>
