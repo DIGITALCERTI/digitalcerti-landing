@@ -21,20 +21,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<script src="https://kit.fontawesome.com/73da2e88a8.js" crossorigin="anonymous" async></script>
 	</head>
 	<body>
-
 		<slot />
 	</body>
 </html>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMDMBRNDC1"></script>
-<script>
+<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-ZMDMBRNDC1"></script>
+<script type="text/partytown">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-ZMDMBRNDC1');
+  gtag('config', 'MEASUREMENT_ID');
 </script>
-
 <style>
 	html {
 		font-family: 'Inter', sans-serif;
